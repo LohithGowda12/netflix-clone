@@ -48,7 +48,7 @@ const MyBookings = () => {
 
 
     </div>
-  ): <Loading />
+  ); <Loading />
 }
 
 export default MyBookings
