@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { dummyShowsData } from '../../assets/assets';
 import Loading from '../../components/Loading';
 import Title from '../../components/admin/Title';
-import { StarIcon } from 'lucide-react';
+import { CheckIcon, StarIcon } from 'lucide-react';
 import { kConverter } from '../../lib/kConverter';
 
 const AddShows = () => {
@@ -30,7 +30,7 @@ const AddShows = () => {
                     {nowPlayingMovies.map((movie) => (
                         <div key={movie.id} className={`relative max-w-40 cursor-pointer 
                         group-hover:not-hover:opacity-40 hover:-translate-y-1 transition
-                        during-300`}>
+                        during-300`} onClick={()=> setSelectedMovie(movie.id)}>
                             <div className='relative rounded-lg overflow-hidden'>
                                 <img src={movie.poster_path} alt="" className='w-full object-cover brightness-90' />
                                 <div className='text-sm flex items-center justify-between
@@ -43,6 +43,15 @@ const AddShows = () => {
 
                                 </div>
                             </div>
+                            {selectedMovie === movie.id && (
+                                <div className='absolute top-2 right-2 flex items-center
+                                justify-center bg-primary h-6 w-6 rounded'>
+                                    <CheckIcon className='w-4 h-4 text-white' strokeWidth={2.5}/>
+
+                                </div>
+                            )}
+                            <p className='font-medium truncate'>{movie.title}</p>
+                            <p className='text-gray-400 text-sm'>{movie.release_date}</p>
                         </div>
                     ))}
                 </div>
