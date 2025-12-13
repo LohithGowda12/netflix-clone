@@ -17,7 +17,7 @@ const HeroSection = () => {
                 <CalendarIcon className='w-4.5 h-4.5'/> 2018
             </div>
             <div className="flex items-center gap-1">
-                <ClockIcon className='w-4.5 h-4.5'/> 2h 8m
+                <ClockIcon className='w-4.5 h-4.5'/> 2h 10m
             </div>
 
         </div>
